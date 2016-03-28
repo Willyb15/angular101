@@ -3,10 +3,56 @@
 <head>
 	<title></title>
 </head>
-<body>
-	<label>Name:</label> <input type="text" ng-model="name">
-	Hello, {{name}}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<style type="text/css" media="screen">
 
+	.input-fields{
+		float:left;	
+		width:9%;
+	}
+
+	.info{
+		border: 1px solid black;
+		margin-left: 150px;
+		margin-top:10px;
+		width: 20%;
+	}	
+
+
+</style>
+<body>
+<!-- 	<label>Name:</label> <input type="text" ng-model="name">
+	<label>Name 2:</label> <input type="text" ng-model="name">
+	<label>Name 3:</label> <input type="text" ng-model="name"> -->
+
+
+
+	<div id="container">
+		<div class="col-md-3 input-fields">
+			<label>F & L Name: </label><input type="text" ng-model="name"><br>
+			<label>Address: </label><input type="text" ng-model="address"><br>
+			<label>City: </label><input type="text" ng-model="city"><br>
+			<label>State: </label><input type="text" ng-model="state"><br>
+			<label>Zip: </label><input type="text" ng-model="zip">
+		</div>
+		
+		<div class="col-md-4 text-center info">
+			<span id="name">{{name}}</span><br>
+			<span id="address">{{address}}</span><br>
+			<span id="city">{{city}} {{state}}</span><br>
+			<span id="zip">{{zip}}</span>	
+		</div>
+		
+	</div>
+
+	
+
+
+
+
+
+
+	<!-- Hello, {{first}} {{last}}! -->
 	<!-- <span id="inputText"> world! </span> -->
 
 
