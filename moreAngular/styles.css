@@ -1,0 +1,20 @@
+ol{
+    display: inline-table;
+    text-align: right;
+    list-style-type: none;
+    margin: 10px -48px;
+	list-style-type:none;
+	border:1px solid black;
+	padding:44px;
+}
+
+#tableCountry{
+	margin-top: 10px;
+
+}
+tr{
+	margin:5px;
+}
+td{
+	padding:5px;
+}
