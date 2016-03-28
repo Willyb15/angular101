@@ -1,22 +1,40 @@
-// -------The plain Vanilla Javascript way of databinding
 
+var myApp = angular.module('myApp', []);
+// console.log(myApp);
+myApp.controller('myController', function($scope){
+	$scope.first = "Will";
+	$scope.last = "Bryant";
 
-
-
-// var myInput = document.getElementById('myInput');
-
-// myInput.addEventListener('keyup', function(){
-// 	// console.log('User hit a key!');
+	$scope.dcClass = [
+		'Tristan',
+		'Josh',
+		'Bogdon',
+		'Laz',
+		'Keith',
+		'Will',
+		'Curtis',
+		'Joe',
+		'Kochan',
+		'Patrick',
+		'Jonathon',
+		'Jeremy'
+	];
 	
-// 	var userText = myInput.value;
-// 	document.getElementById('inputText').innerHTML = userText;
+	$scope.addStudent = function(){
+		$scope.dcClass.push($scope.newStudent);
+		$scope.newStudent = '';
+	}
+	
+	$scope.removeStudent = function(name){
+		var i = $scope.dcClass.indexOf(name);
+		console.log(i);
+		$scope.dcClass.splice(i,1);
+		// for(var i=0; i < $scope.dcClass.length; i++){
+		// 	if (name == $scope.dcClass[i]){
+		// 		$scope.dcClass.splice(i,1);
+		// 	}
+		// }	
 
+	}
 
-
-// })
-
-
-// ------------The jQuery Way of databinding------------
-// $('#myInput').keyup(function(){
-// 	$('#inputText').html($('#myInput').val());
-// })
+})
