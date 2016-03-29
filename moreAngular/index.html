@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+
+
+	<title>More Angular</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+	<script type="text/javascript" src="controller.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body ng-controller='myController'>
+	
+	<div id="container">
+		<div id="tableCountry" class="col-sm-8">
+			<table border=1>
+				<thead>
+					<th>Country</th>
+					<th>Population</th>
+					<th>President</th>
+					<th>Flag Colors</th>
+				</thead>
+	
+				<tr ng-repeat="country in countriesArray track by $index">
+					<td> <a ng-click="removeCountry($index)">{{country.name}}</a></td>
+					<td id="number-default">{{country.population}}</td>
+					<td>{{country.president}}</td>
+					<td><img ng-src="{{country.flagColor}}"></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="inputs" class=col-sm-4>
+			<form ng-submit="addCountry()" name="form">
+				<ol>
+					<li><label>Country</label><input ng-minlength="3" required type="text" ng-model="newName"><br></li>
+					<li><label>Population </label><input ng-minlength="3" required type="text" ng-model="newPop"><br></li>
+					<li><label>President</label><input ng-minlength="3" required type="text" ng-model="newPres"><br></li>
+					<li><label>Flag Color</label><input ng-minlength="3" required type="text" ng-model="newFlag"><br></li>
+					<li><input type="submit" value="Add Country!" ng-disabled="form.$invalid"></li>
+				</ol>
+
+			</form>
+
+		</div>
+	</div>
+
+
+</body>
+</html>
+
+
+
+<!-- 
+rob [4:17 PM] 
+Create an array.
+In that array, put 10 objects.
+Each object should be a countries.
+Each country, name should have a population, president/PM/dictator, flag colors
+Using ng-repeat, put the country objects on the page in a table format.
+Give the user an input box that will allow them to add a new coutry.
+This input, must have have all 4 input fields
+As soon as the user enters all 4, have the new country show up. -->
