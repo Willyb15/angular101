@@ -79,4 +79,8 @@ myApp.controller('myController', function($scope){
 			// $scope.addCountry = '';
 		}
 
+		$scope.removeCountry = function(i){
+			$scope.countriesArray.splice(i,1);
+		}
+
 })

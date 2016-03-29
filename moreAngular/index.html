@@ -24,7 +24,7 @@
 				</thead>
 	
 				<tr ng-repeat="country in countriesArray track by $index">
-					<td>{{country.name}}</td>
+					<td> <a ng-click="removeCountry($index)">{{country.name}}</a></td>
 					<td id="number-default">{{country.population}}</td>
 					<td>{{country.president}}</td>
 					<td><img ng-src="{{country.flagColor}}"></td>
