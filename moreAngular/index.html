@@ -27,19 +27,19 @@
 					<td>{{country.name}}</td>
 					<td id="number-default">{{country.population}}</td>
 					<td>{{country.president}}</td>
-					<td>{{country.flagColor}}</td>
+					<td><img ng-src="{{country.flagColor}}"></td>
 				</tr>
 			</table>
 		</div>
 		
 		<div id="inputs" class=col-sm-4>
-			<form ng-submit="addCountry()">
+			<form ng-submit="addCountry()" name="form">
 				<ol>
-					<li><label>Country</label><input type="text" ng-model="newName"><br></li>
-					<li><label>Population </label><input type="text" ng-model="newPop"><br></li>
-					<li><label>President</label><input type="text" ng-model="newPres"><br></li>
-					<li><label>Flag Color</label><input type="text" ng-model="newFlag"><br></li>
-					<li><input type="submit" value="Add Country!"></li>
+					<li><label>Country</label><input ng-minlength="3" required type="text" ng-model="newName"><br></li>
+					<li><label>Population </label><input ng-minlength="3" required type="text" ng-model="newPop"><br></li>
+					<li><label>President</label><input ng-minlength="3" required type="text" ng-model="newPres"><br></li>
+					<li><label>Flag Color</label><input ng-minlength="3" required type="text" ng-model="newFlag"><br></li>
+					<li><input type="submit" value="Add Country!" ng-disabled="form.$invalid"></li>
 				</ol>
 
 			</form>
