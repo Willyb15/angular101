@@ -1,9 +1,31 @@
 var myApp = angular.module('myApp', []);
 // console.log(myApp);
-myApp.controller('myController', function($scope){
+myApp.controller('myController', function($scope, $http){
+
+	var movieURL = "https:api.themoviedb.org/3/search/movie?api_key=fec8b5ab27b292a68294261bb21b04a5&query=superman"
+		
+		$http.get('movieURL').success(function(data){
+			console.log(dataWeGotBack);
+		})
 
 
-	$scope.countriesArray =[
+		$scope.addCountry = function(name,population,president,flag){
+			$scope.countriesArray.push({
+				name: $scope.newName,
+				population: $scope.newPop,
+				president: $scope.newPres,
+				flagColor: $scope.newFlag
+			}
+			);
+			// $scope.addCountry = '';
+		}
+
+		$scope.removeCountry = function(i){
+			$scope.countriesArray.splice(i,1);
+		}
+
+
+$scope.countriesArray =[
 		{
 			name: "United States",
 			population:322369319,
@@ -66,21 +88,5 @@ myApp.controller('myController', function($scope){
 			flagColor: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/75px-Flag_of_Jordan.svg.png" 
 		}
 	];
-
-		
-		$scope.addCountry = function(name,population,president,flag){
-			$scope.countriesArray.push({
-				name: $scope.newName,
-				population: $scope.newPop,
-				president: $scope.newPres,
-				flagColor: $scope.newFlag
-			}
-			);
-			// $scope.addCountry = '';
-		}
-
-		$scope.removeCountry = function(i){
-			$scope.countriesArray.splice(i,1);
-		}
 
 })

@@ -7,23 +7,24 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-
 	<script type="text/javascript" src="controller.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body ng-controller='myController'>
+	<input type="text" ng-model="sortInput">
 	
 	<div id="container">
 		<div id="tableCountry" class="col-sm-8">
 			<table border=1>
 				<thead>
-					<th>Country</th>
-					<th>Population</th>
-					<th>President</th>
+					<th><a href="" ng-click="sortField='name'; reverse =! reverse">Country</a></th>
+					<th><a href="" ng-click="sortField='population'; reverse =! reverse">Population</a></th>
+					<th><a href="" ng-click="sortField='president'; reverse =! reverse">President</a></th>
 					<th>Flag Colors</th>
 				</thead>
 	
-				<tr ng-repeat="country in countriesArray track by $index">
+				<tr ng-repeat="country in countriesArray | filter:sortInput | orderBy:sortField:reverse track by $index">
 					<td> <a ng-click="removeCountry($index)">{{country.name}}</a></td>
 					<td id="number-default">{{country.population}}</td>
 					<td>{{country.president}}</td>
