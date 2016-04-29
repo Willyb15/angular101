@@ -36,7 +36,6 @@ myApp.controller('myController', function($scope){
 ```
 ###Now our view has access to these variables...
 ```html
-<!DOCTYPE html>
 <html ng-app='myApp'>
 <body ng-controller='myController'>
 <table border=1>
